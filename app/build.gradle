@@ -18,6 +18,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildFeatures{
+        viewBinding true
+    }
 
     buildTypes {
         release {
@@ -41,8 +44,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+
     //room
     implementation "androidx.room:room-runtime:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
@@ -52,5 +57,11 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.44.2"
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    //Lifecycle
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    //ViewBindingDelegate
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6'
 
 }
